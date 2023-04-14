@@ -1,5 +1,7 @@
 # Go Color Package
 
+[![codecov](https://codecov.io/gh/alan890104/color/branch/main/graph/badge.svg?token=Q5B4MEAJS9)](https://codecov.io/gh/alan890104/color)
+
 Package color provides functions to colorize text in the terminal.
 It is simple, lightweight, and easy to use.
 
