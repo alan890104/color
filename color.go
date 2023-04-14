@@ -1,6 +1,8 @@
 package color
 
-import "fmt"
+import (
+	"fmt"
+)
 
 const (
 	_Black   = "\033[30m"
@@ -122,4 +124,44 @@ func Warning(text string) string {
 // Info 會將給定的字串加上藍色
 func Info(text string) string {
 	return Colorize(_Blue, text)
+}
+
+// Debug 會將給定的字串加上青色
+func Debug(text string) string {
+	return Colorize(_Cyan, text)
+}
+
+// Fatal 會將給定的字串加上紫色
+func Fatal(text string) string {
+	return Colorize(_Magenta, text)
+}
+
+// Successf 會將給定的字串加上綠色
+func Successf(format string, a ...interface{}) string {
+	return Colorizef(_Green, format, a...)
+}
+
+// Errorf 會將給定的字串加上紅色
+func Errorf(format string, a ...interface{}) string {
+	return Colorizef(_Red, format, a...)
+}
+
+// Warningf 會將給定的字串加上黃色
+func Warningf(format string, a ...interface{}) string {
+	return Colorizef(_Yellow, format, a...)
+}
+
+// Infof 會將給定的字串加上藍色
+func Infof(format string, a ...interface{}) string {
+	return Colorizef(_Blue, format, a...)
+}
+
+// Debugf 會將給定的字串加上青色
+func Debugf(format string, a ...interface{}) string {
+	return Colorizef(_Cyan, format, a...)
+}
+
+// Fatalf 會將給定的字串加上紫色
+func Fatalf(format string, a ...interface{}) string {
+	return Colorizef(_Magenta, format, a...)
 }

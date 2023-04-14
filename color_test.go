@@ -169,3 +169,69 @@ func TestInfo(t *testing.T) {
 		t.Errorf("Expected %s, but got %s", expected, actual)
 	}
 }
+
+func TestDebug(t *testing.T) {
+	expected := "\033[36mdebug\033[0m"
+	result := Debug("debug")
+	if result != expected {
+		t.Errorf("Expected %s but got %s", expected, result)
+	}
+}
+
+func TestFatal(t *testing.T) {
+	expected := "\033[35mfatal\033[0m"
+	result := Fatal("fatal")
+	if result != expected {
+		t.Errorf("Expected %s but got %s", expected, result)
+	}
+}
+
+func TestSuccessf(t *testing.T) {
+	expected := "\033[32mtest: 123\033[0m"
+	result := Successf("test: %d", 123)
+	if result != expected {
+		t.Errorf("Expected %s but got %s", expected, result)
+	}
+}
+
+func TestErrorf(t *testing.T) {
+	expected := "\033[31mtest: 123\033[0m"
+	result := Errorf("test: %d", 123)
+	if result != expected {
+		t.Errorf("Expected %s but got %s", expected, result)
+	}
+}
+
+func TestWarningf(t *testing.T) {
+	expected := "\033[33mtest: 123\033[0m"
+	result := Warningf("test: %d", 123)
+	if result != expected {
+		t.Errorf("Expected %s but got %s", expected, result)
+	}
+}
+
+func TestInfof(t *testing.T) {
+	expected := "\033[34mtest: 123\033[0m"
+	result := Infof("test: %d", 123)
+	if result != expected {
+		t.Errorf("Expected %s but got %s", expected, result)
+	}
+}
+
+func TestDebugf(t *testing.T) {
+	expected := "\033[36mdebug message\033[0m"
+	result := Debugf("debug message")
+
+	if result != expected {
+		t.Errorf("Expected '%s', but got '%s'", expected, result)
+	}
+}
+
+func TestFatalf(t *testing.T) {
+	expected := "\033[35mfatal message\033[0m"
+	result := Fatalf("fatal message")
+
+	if result != expected {
+		t.Errorf("Expected '%s', but got '%s'", expected, result)
+	}
+}
