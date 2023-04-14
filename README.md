@@ -44,7 +44,7 @@ package main
 import (
     "fmt"
 
-    "github.com/username/repo/color"
+    "github.com/alan890104/color"
 )
 
 func main() {
